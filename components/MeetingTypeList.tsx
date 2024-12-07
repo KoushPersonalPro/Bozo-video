@@ -13,6 +13,7 @@ import { Textarea } from './ui/textarea';
 import ReactDatePicker from 'react-datepicker';
 import { useToast } from './ui/use-toast';
 import { Input } from './ui/input';
+import '../app/globals.css'
 
 const initialValues = {
   dateTime: new Date(),
@@ -78,26 +79,27 @@ const MeetingTypeList = () => {
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
       <HomeCard
-        img="/icons/join-meeting.svg"
-        title="Join Meeting"
-        description="via invitation link"
-        className="bg-blue-1"
-        handleClick={() => setMeetingState('isJoiningMeeting')}
-      />
-      <HomeCard
-        img="/icons/schedule.svg"
-        title="Schedule Meeting"
-        description="Plan your meeting"
-        className="bg-purple-1"
-        handleClick={() => setMeetingState('isScheduleMeeting')}
-      />
-      <HomeCard
-        img="/icons/recordings.svg"
-        title="View Recordings"
-        description="Meeting Recordings"
-        className="bg-yellow-1"
-        handleClick={() => router.push('/recordings')}
-      />
+  img="/icons/join-meeting.svg"
+  title="Join Meeting"
+  description="via invitation link"
+  className="home-card bg-blue-1"
+  handleClick={() => setMeetingState('isJoiningMeeting')}
+/>
+<HomeCard
+  img="/icons/schedule.svg"
+  title="Schedule Meeting"
+  description="Plan your meeting"
+  className="home-card bg-purple-1"
+  handleClick={() => setMeetingState('isScheduleMeeting')}
+/>
+<HomeCard
+  img="/icons/recordings.svg"
+  title="View Recordings"
+  description="Meeting Recordings"
+  className="home-card bg-yellow-1"
+  handleClick={() => router.push('/recordings')}
+/>
+
 
       {!callDetail ? (
         <MeetingModal
